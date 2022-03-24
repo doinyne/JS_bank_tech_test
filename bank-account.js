@@ -3,18 +3,20 @@
 // convenience to get you started writing code faster.
 //
 
+
 export class BankAccount {
   amount = 0
+  isOpen = false
   constructor() {
     
   }
 
   open() {
-    
+    this.isOpen = true
   }
 
   close() {
-    throw new Error('Remove this statement and implement this function');
+    this.isOpen = false
   }
 
   deposit(value) {
@@ -26,7 +28,11 @@ export class BankAccount {
   }
 
   get balance() {
-    return this.amount
+    if (this.isOpen) {
+      return this.amount;
+    }else {
+      throw new ValueError();
+    } 
   }
 }
 
