@@ -3,7 +3,6 @@
 // convenience to get you started writing code faster.
 //
 
-
 export class BankAccount {
   amount = 0
   isOpen = false
@@ -20,11 +19,19 @@ export class BankAccount {
   }
 
   deposit(value) {
-    this.amount = this.amount + value;
+    if (this.isOpen) {
+      this.amount = this.amount + value;
+    }else {
+      throw new ValueError();
+    } 
   }
 
   withdraw(value) {
-    this.amount = this.amount - value;
+    if (this.isOpen) {
+      this.amount = this.amount - value;
+    }else {
+      throw new ValueError();
+    } 
   }
 
   get balance() {
