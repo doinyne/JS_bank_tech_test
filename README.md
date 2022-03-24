@@ -1,7 +1,3 @@
-# Bank Account
-
-Welcome to Bank Account on Exercism's JavaScript Track.
-If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
@@ -29,14 +25,4 @@ Remember that passing code is just the first step. The goal is to work
 towards a solution that is as readable and expressive as you can make
 it.
 
-Have fun!
-
-## Source
-
-### Created by
-
-- @TomPradat
-
-### Contributed to by
-
-- @SleeplessByte
+Have fun!å
