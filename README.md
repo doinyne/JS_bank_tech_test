@@ -25,4 +25,6 @@ Remember that passing code is just the first step. The goal is to work
 towards a solution that is as readable and expressive as you can make
 it.
 
-Have fun!å
+Have fun!
+
+two branches used, mac mini(main) and mac-book
