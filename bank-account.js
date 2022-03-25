@@ -15,7 +15,11 @@ export class BankAccount {
   }
 
   close() {
+    if (this.isOpen === false) {
+      throw new ValueError()
+    } else {
     this.isOpen = false
+    }
   }
 
   deposit(value) {
