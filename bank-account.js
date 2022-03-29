@@ -4,52 +4,44 @@
 //
 
 export class BankAccount {
-  amount = 0
-  isOpen = false
-  constructor() {
-    
-  }
+  amount = 0;
+  isOpen = false;
+  constructor() {}
 
   open() {
     if (this.isOpen === true) {
-      throw new ValueError()
-    } else {
-      this.isOpen = true
+      throw new ValueError();
     }
+    this.isOpen = true;
   }
 
+
   close() {
-    if (this.isOpen === false) {
-      throw new ValueError()
-    } else {
-    this.isOpen = false
-    }
+    this.throwIfClosed();
+    this.isOpen = false;
+  }
+
+  throwIfClosed() {
+    if (!this.isOpen) {
+      throw new ValueError();
+    } 
   }
 
   deposit(value) {
-    if (this.isOpen) {
-      this.amount = this.amount + value;
-    }else {
-      throw new ValueError();
-    } 
+    this.throwIfClosed()
+    this.amount = this.amount + value; 
   }
 
   withdraw(value) {
-    if (this.isOpen) {
-      this.amount = this.amount - value;
-    }else {
-      throw new ValueError();
-    } 
+    this.throwIfClosed()
+    this.amount = this.amount - value; 
   }
 
   get balance() {
-    if (this.isOpen) {
-      return this.amount;
-    }else {
-      throw new ValueError();
-    } 
+    this.throwIfClosed()
+    return this.amount;
   }
-}
+};
 
 export class ValueError extends Error {
   constructor() {
