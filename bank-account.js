@@ -35,7 +35,13 @@ export class BankAccount {
   }
 
   withdraw(value) {
-    this.throwIfClosed()
+    this.throwIfClosed();
+    if(value > this.amount) {
+      throw new ValueError();
+    }
+    if(value < 0) {
+      throw new ValueError();
+    }
     this.amount = this.amount - value; 
   }
 

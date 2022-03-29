@@ -88,7 +88,7 @@ describe('Bank Account', () => {
     expect(account.balance).toEqual(0);
   });
 
-  xtest('cannot withdraw more than deposited', () => {
+  test('cannot withdraw more than deposited', () => {
     const account = new BankAccount();
     account.open();
     account.deposit(25);
@@ -97,7 +97,7 @@ describe('Bank Account', () => {
     }).toThrow(ValueError);
   });
 
-  xtest('cannot withdraw negative amount', () => {
+  test('cannot withdraw negative amount', () => {
     const account = new BankAccount();
     account.open();
     account.deposit(100);
