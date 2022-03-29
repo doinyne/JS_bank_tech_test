@@ -12,7 +12,9 @@ export class BankAccount {
     if (this.isOpen === true) {
       throw new ValueError();
     }
+
     this.isOpen = true;
+    this.amount = 0;
   }
 
 
