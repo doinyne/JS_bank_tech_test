@@ -29,8 +29,15 @@ export class BankAccount {
     } 
   }
 
+  throwIfNegativeAmount(value) {
+    if (value < 0) {
+      throw new ValueError();
+    }
+  }
+
   deposit(value) {
-    this.throwIfClosed()
+    this.throwIfClosed();
+    this.throwIfNegativeAmount(value);
     this.amount = this.amount + value; 
   }
 
@@ -39,9 +46,7 @@ export class BankAccount {
     if(value > this.amount) {
       throw new ValueError();
     }
-    if(value < 0) {
-      throw new ValueError();
-    }
+    this.throwIfNegativeAmount(value);
     this.amount = this.amount - value; 
   }
 

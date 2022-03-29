@@ -106,7 +106,7 @@ describe('Bank Account', () => {
     }).toThrow(ValueError);
   });
 
-  xtest('cannot deposit negative amount', () => {
+  test('cannot deposit negative amount', () => {
     const account = new BankAccount();
     account.open();
     expect(() => {
@@ -114,7 +114,7 @@ describe('Bank Account', () => {
     }).toThrow(ValueError);
   });
 
-  xtest('changing balance directly throws error', () => {
+  test('changing balance directly throws error', () => {
     const account = new BankAccount();
     account.open();
     expect(() => {
